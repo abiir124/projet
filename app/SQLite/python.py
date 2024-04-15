@@ -47,7 +47,7 @@ insert_queries = [
 
     ("Scholl 3", 50, 100000, None),
         ("Scholl 3", 500 , 100000, None),
-                ("Scholl 3", 500 , 100000, None)
+
 
     
 

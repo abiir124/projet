@@ -3,12 +3,13 @@ import random
 from typing import List
 import numpy as np
 import os
-
 import json
 import sqlite3
-
+import subprocess
 
 app = Flask(__name__)
+
+
 
 # Chemin relatif vers le dossier SQLite
 db_folder = 'SQLITE'
@@ -26,6 +27,8 @@ def ouvrir_base_de_donnees():
     except sqlite3.Error as e:
         print(f"Erreur lors de l'ouverture de la base de données : {e}")
         return None
+    
+    
 
 def best_fit_heuristic(objets, capacite_bin):
     # Tri des objets par ordre décroissant de taille
@@ -199,9 +202,12 @@ def algorithme_loups(objets, capacite_bin, nombre_loups, nombre_iterations):
 
 
 
-    # Votre route principale
+  # Votre route principale
 @app.route('/')
 def home():
+    # Ajoutez cette ligne pour exécuter votre script python.py
+    subprocess.Popen(["python", "python.py"], cwd=r"C:\Users\bouha\OneDrive\Bureau\Bin-packing-main\app\SQLite")
+
     return render_template('accueil.html')
 
 @app.route('/index.html')
@@ -411,6 +417,7 @@ def enregistrer_donnees():
 
 
 if __name__ == '__main__':
+
     app.run(debug=True)
 
   
