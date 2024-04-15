@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Base de données </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bdd.css') }}">
+
+
+
+</head>
+
+<body>
+    <h1>Liste des benchmarks</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID </th>
+                <th>Nom du benchmark </th>
+                <th>Nombre d'objets</th>
+                <th>Capacité des bacs</th>
+                <th>Dimensions des objets</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for benchmark in benchmarks %}
+            <tr>
+                <td>{{ benchmark[0] }}</td>
+                <td>{{ benchmark[1] }}</td>
+                <td>{{ benchmark[2] }}</td>
+                <td>{{ benchmark[3] }}</td>
+                <td>
+                    <button class="select-btn" data-nombre-objets="{{ benchmark[2] }}"
+                        data-capacite-bin="{{ benchmark[3] }}"
+                        data-dimensions-objets="{{ benchmark[4] }}">Sélectionner</button>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Formulaire pour passer les valeurs sélectionnées à la page index.html -->
+    <form id="user-input-form" action="/valider" method="GET">
+        <label for="nombre-objets">Nombre d'objets:</label>
+        <input type="text" id="nombre-objets" name="nombre-objets" value="{{ nombre_objets }}">
+
+        <label for="capacite-bin"> Capacité d'un bac:</label>
+        <input type="text" id="capacite-bin" name="capacite-bin" value="{{ capacite_bin }}">
+
+        <label for="dimensions-objets">Les dimensions des objets sous forme de liste:</label>
+        <input type="text" id="dimensions-objets" name="dimensions-objets" value="{{ dimensions_objets }}">
+
+    </form>
+
+    <script>
+        document.querySelectorAll('.select-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('nombre-objets').value = btn.dataset.nombreObjets;
+                document.getElementById('capacite-bin').value = btn.dataset.capaciteBin;
+                document.getElementById('dimensions-objets').value = btn.dataset.dimensionsObjets;
+            });
+        });
+    </script>
+
+
+    <script>
+        function redirigerVersIndex() {
+            // Récupérer les valeurs des champs de formulaire
+            var valeurNbrObjets = document.getElementById("nombre-objets").value;
+            var valeurCapaciteBin = document.getElementById("capacite-bin").value;
+            var valeurDimensions = document.getElementById("dimensions-objets").value;
+
+            // Construire l'URL avec les valeurs des champs en tant que paramètres de requête
+            var url = "index.html?nombre-objets=" + encodeURIComponent(valeurNbrObjets) +
+                "&capacite-bin=" + encodeURIComponent(valeurCapaciteBin) +
+                "&dimensions-objets=" + encodeURIComponent(valeurDimensions);
+
+            // Rediriger vers index.html avec les valeurs des champs
+            window.location.href = url;
+        }
+
+    </script>
+
+    <!-- Bouton pour rediriger vers index.html avec les valeurs des champs de formulaire -->
+    <button id="accueil-btn" onclick="redirigerVersIndex()">Valider et retourner à l'accueil</button>
+
+
+
+</body>
+
+</html>

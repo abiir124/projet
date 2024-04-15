@@ -1,0 +1,109 @@
+/* Styles pour la page de liste des benchmarks */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.select-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.select-btn:hover {
+    background-color: #0056b3;
+}
+
+form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#accueil-btn {
+    margin-top: 30px;
+    position: absolute;
+    /* Ajoute une position absolue */
+    left: 50%;
+    /* Le place à 50% de la largeur de la page */
+    transform: translate(-50%, -50%);
+    /* Le recentre précisément */
+    font-size: 15px;
+
+}
+
+input[type="text"] {
+    width: 500px;
+    /* Largeur fixe pour les champs de texte */
+    padding: 8px;
+    margin: 10px auto;
+    /* Centrer horizontalement */
+    display: block;
+    /* Assure que les champs de texte sont affichés en tant que blocs */
+    text-align: center;
+    /* Centrer le texte horizontalement */
+}
+
+#user-input-form {
+    border-top: 5px solid #635f5f;
+    /* Ajoute une bordure supérieure de 1 pixel solide avec la couleur #ddd */
+    padding-top: 20px;
+    /* Ajoute un peu d'espace au-dessus des champs de formulaire */
+}

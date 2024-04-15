@@ -1,0 +1,614 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif
+}
+
+.background-image {
+  background-image: url("Images/accueil2.jpg");
+  /* Remplacez 'background.jpg' par le chemin de votre image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.content {
+  text-align: center;
+  border-radius: 40px;
+  padding: 25px 35px;
+  background: linear-gradient(0deg, rgb(11, 10, 10) 0%, rgba(2, 7, 7, 0.322) 100%);
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.progressbar-wrapper {
+  background-color: #0c8a2d;
+  color: white;
+  border-radius: 15px;
+  width: 500px;
+  height: 30px;
+}
+
+.progressbar {
+  background-color: var(--progress);
+  color: rgb(243, 247, 243);
+  padding: 1rem;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.progressbar[title="downloading"] {
+  background-color: var(--progress);
+}
+
+.progressbar[title="downloaded"] {
+  background-color: var(--success);
+}
+
+.button2 {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #0d920d;
+  color: ghostwhite;
+}
+
+.button1 {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  position: relative;
+  letter-spacing: 0.05rem;
+  font-weight: 500;
+  font-size: 10px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #0d920d;
+  color: ghostwhite;
+  text-align: center;
+}
+
+.button1 span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+.button1:hover span {
+  color: rgb(10, 8, 8);
+}
+
+.button1::before,
+.button1::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.button1::before {
+  content: "";
+  background: #94940c;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.button1:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+div.title {
+
+  border-radius: 80%;
+  padding: 7%;
+  font-family: Tahoma, Verdana, sans-serif;
+  margin-top: 2%;
+  line-height: 1.5;
+}
+
+.body1 {
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background1 {
+  background-color: #0e3c6f;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-image: url("Images/containers.jpg");
+  /* Remplacez 'background.jpg' par le chemin de votre image */
+
+}
+
+.background2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Espacement équitable entre les éléments */
+  align-items: center;
+  background-color: rgb(20, 54, 146);
+
+  padding: 18px;
+}
+
+.background21 {
+  background-color: rgb(20, 54, 146);
+}
+
+.background3 {
+  background-color: rgb(20, 54, 146);
+
+  padding: 10px;
+
+}
+
+.background4 {
+
+  display: flex;
+  justify-content: space-around;
+  /* Espacement équitable entre les éléments */
+  align-items: center;
+  flex: 1;
+  padding: 0px;
+  height: 70%;
+}
+
+.background {
+  background-color: rgba(25, 95, 181, 0.749);
+  padding: 10px;
+}
+
+span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  margin-left: 10%;
+
+
+
+}
+
+.group {
+  display: flex;
+  line-height: 10px;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.input {
+  width: 80%;
+  height: 45px;
+  line-height: 30px;
+  padding: 0 5rem;
+  padding-left: 1rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+  background-color: #f8fafc;
+  color: #0d0c22;
+  transition: .5s ease;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(129, 140, 248);
+  background-color: #fff;
+  box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: none;
+  width: 1rem;
+  height: 1rem;
+}
+
+.génétique {
+  background-image: url("Images/genetique2.jpg");
+  width: 25vw;
+  height: 20vh;
+  background-size: cover;
+  /* Utilisez 'contain' à la place si vous préférez que l'image soit entièrement visible dans la div */
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+}
+
+.GWO {
+  background-image: url("Images/loups_gris.jpg");
+  width: 25vw;
+  height: 20vh;
+  background-size: cover;
+  /* Utilisez 'contain' à la place si vous préférez que l'image soit entièrement visible dans la div */
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.choix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  justify-items: center;
+  align-items: center;
+  column-gap: 0px;
+  margin-top: 5%;
+
+
+}
+
+.affichage {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  background-color: rgba(13, 53, 102, 0.749);
+  width: 100%;
+  border-radius: 5%;
+  height: 40%;
+
+}
+
+.nbr-bin {
+  background-color: #0e3b6f9e;
+  border-radius: 5%;
+  color: white;
+  height: 280px;
+  justify-content: space-between;
+  /* Espacement équitable entre les éléments */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+
+}
+
+.disposition {
+  background-color: #0e3b6f9e;
+  border-radius: 5%;
+  color: white;
+  height: 280px;
+  width: 300px;
+  justify-content: space-between;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon1 {
+  margin-right: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  width: 15em;
+  height: 4em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  gap: 12px;
+  background: #911111;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+  fill: #AAAAAA;
+  transition: all 800ms ease;
+}
+
+.text {
+  font-weight: 600;
+  color: #AAAAAA;
+  font-size: medium;
+}
+
+.btn:hover {
+  background: linear-gradient(0deg, #A47CF3, #5bea3f);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+    0px 0px 180px 0px #41ff17;
+  transform: translateY(-2px);
+}
+
+.btn:hover .text {
+  color: white;
+}
+
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10%;
+  align-items: center;
+  margin-right: 10%;
+}
+
+.radio-tile-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.radio-tile-group .input-container {
+  position: relative;
+  height: 100px;
+  width: 90px;
+  margin: 0.5rem;
+}
+
+.radio-tile-group .input-container .radio-button {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.radio-tile-group .input-container .radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #f7f7f7;
+  border-radius: 5px;
+  padding: 1rem;
+  transition: transform 300ms ease;
+}
+
+.radio-tile-group .input-container .icon svg {
+  fill: white;
+  width: 2rem;
+  height: 2rem;
+}
+
+.radio-tile-group .input-container .radio-tile-label {
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.75rem;
+  margin-left: 0%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.radio-tile-group .input-container .radio-button:checked+.radio-tile {
+  background-color: #079ad9;
+  background-image: url("Images/genetique2.jpg");
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #f8fafc;
+  color: white;
+  transform: scale(1.1, 1.1);
+}
+
+.radio-tile-group .input-container .radio-button[value="loupsgris"]:checked+.radio-tile {
+
+  background-image: url("Images/loups_gris.jpg");
+}
+
+.radio-tile-group .input-container .radio-button:checked+.radio-tile .icon svg {
+  fill: white;
+  background-color: #040708;
+}
+
+.radio-tile-group .input-container .radio-button:checked+.radio-tile .radio-tile-label {
+  color: white;
+  background-color: #ebefef60;
+}
+
+.radio-tile-group .input-container .radio-button[value="loupsgris"]:checked+.radio-tile .radio-tile-label {
+  color: black;
+  background-color: #e8ececdf;
+}
+
+.radio-tile-group .input-container .radio-button[value="loupsgris"]:checked+.radio-tile svg path {
+  fill: black;
+  stroke-width: 50;
+}
+
+.container1 {
+  height: 280px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+
+}
+
+.container2 {
+  height: 200px;
+  margin-left: 20%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+
+}
+
+.group1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 7%;
+  margin-left: 0%;
+
+}
+
+.input1 {
+  width: 40%;
+  height: 30px;
+  padding: 0 5rem;
+  padding-left: 3rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  color: #0d0c22;
+  transition: .5s ease;
+  font-size: 10px;
+}
+
+.input1::placeholder {
+  color: #94a3b8;
+}
+
+.input1:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(129, 140, 248);
+  background-color: #fff;
+  box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+  margin-left: 15%;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+
+}
+
+.sign svg path {
+  fill: white;
+}
+
+/* text */
+.text {
+
+  right: 0%;
+  width: 0%;
+
+  opacity: 0;
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.Btn:hover {
+  width: 170px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
+.container22 {
+  flex: 1;
+  justify-content: space-between;
+}

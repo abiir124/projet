@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body class="body1">
+
+
+    <div class="background1">
+        <div class="title"><b>
+                <p style="font-size: 60px;color: white;text-align: center;margin-top: 6%; "> Bin packing resolution</p>
+            </b></div>
+    </div>
+    <div class="background21" style="display: flex;flex-direction: column;">
+        <div class="background2">
+            <div class="container1" style="background-color: rgba(72, 106, 180, 0.689); ;border-radius: 15%;">
+                <span style="margin-top: 5%;margin-right: 5%;">2-Veuillez choisir une métaheuristique</span>
+                <div class="container">
+                    <div class="radio-tile-group">
+                        <div class="input-container">
+                            <input id="genetique" class="radio-button" type="radio" name="algorithme" value="genetique">
+                            <div class="radio-tile">
+
+
+                                <label for="genetique" class="radio-tile-label">Algorithme génétique</label>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                                    viewBox="0 0 24 24" width="30" height="55">
+                                    <path fill="white"
+                                        d="m14.774,13.197c-.307.198-.614.395-.919.588,1.52,1.003,2.941,2.038,4.109,3.215H6.035c1.7-1.714,3.935-3.126,6.232-4.577,4.785-3.022,9.733-6.147,9.733-12.423h-1c0,.709-.069,1.374-.199,2H3.2c-.13-.626-.2-1.291-.2-2h-1c0,5.173,3.364,8.205,7.226,10.803.307-.198.614-.395.919-.588-1.52-1.003-2.941-2.038-4.109-3.215h11.929c-1.7,1.714-3.935,3.126-6.232,4.577-4.785,3.022-9.733,6.147-9.733,12.423h1c0-.709.069-1.374.199-2h17.601c.13.626.2,1.291.2,2h1c0-5.173-3.364-8.205-7.226-10.803Zm5.758-10.197c-.37,1.114-.945,2.101-1.669,3H5.139c-.724-.899-1.3-1.886-1.67-3h17.063ZM3.468,21c.37-1.114.945-2.101,1.669-3h13.724c.724.899,1.3,1.886,1.67,3H3.468Z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="input-container">
+                            <input id="loupsgris" class="radio-button" type="radio" name="algorithme" value="loupsgris">
+                            <div class="radio-tile">
+                                <label for="loupsgris" class="radio-tile-label" style="margin-left: 10%;">Algorithme des
+                                    loups gris</label>
+                                <svg fill="white" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                                    viewBox="0 0 24 24" width="30" height="45">
+                                    <path
+                                        d="m19.705,19.228c.282.491.387,1.071.297,1.634l-.167,1.035c-.196,1.218-1.234,2.103-2.468,2.103h-4.867c-.276,0-.5-.224-.5-.5s.224-.5.5-.5h4.867c.741,0,1.363-.531,1.481-1.262l.167-1.035c.054-.337-.008-.685-.177-.978-.876-1.526-.922-1.893-.939-2.031-.16-1.263-.806-2.117-2.033-2.685-.461-.233-1.659-.837-2.45-.974-.24-.041-.416-.249-.416-.493v-2.304c0-.106-.063-.167-.101-.194-.037-.026-.112-.066-.213-.032-1.008.347-1.686,1.298-1.686,2.365v.965c0,.171-.088.331-.232.422-2.584,1.636-5.575,4.11-5.768,8.756-.011.269-.232.479-.499.479-.007,0-.014,0-.021,0-.276-.011-.49-.244-.479-.521.208-5.012,3.457-7.763,6-9.41v-.691c0-1.494.949-2.825,2.361-3.311.375-.13.794-.068,1.119.164.326.232.52.609.52,1.008v1.903c.819.218,1.854.742,2.286.96,1.548.717,2.4,1.852,2.604,3.467.001.013.049.324.814,1.658Zm-3.705-1.228c0-.552-.448-1-1-1s-1,.448-1,1,.448,1,1,1,1-.448,1-1Zm5.772-12c-.978,0-1.897-.431-2.523-1.182l-.229-.276c-.817-.98-2.017-1.542-3.292-1.542h-.727v-1.761c0-.399-.194-.775-.52-1.008-.325-.232-.745-.293-1.119-.164-1.412.486-2.361,1.816-2.361,3.311v1.514l-2.404,3.273c-.844,1.149-2.2,1.835-3.626,1.835H.5c-.276,0-.5.224-.5.5s.224.5.5.5h4.469c1.743,0,3.4-.839,4.432-2.244l2.501-3.405c.063-.085.097-.189.097-.296v-1.678c0-1.067.678-2.018,1.686-2.365.099-.033.176.006.213.032.038.027.101.088.101.194v2.261c0,.276.224.5.5.5h1.227c.978,0,1.898.431,2.524,1.182l.229.276c.817.979,2.017,1.542,3.292,1.542.677,0,1.228.551,1.228,1.228v1.272c0,1.93-1.57,3.5-3.5,3.5-.276,0-.5.224-.5.5s.224.5.5.5c2.481,0,4.5-2.019,4.5-4.5v-1.272c0-1.228-1-2.228-2.228-2.228Zm-4.772,2c.552,0,1-.448,1-1s-.448-1-1-1-1,.448-1,1,.448,1,1,1Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container1"
+                style=" flex: 1; background-color: rgba(72, 106, 180, 0.79);margin-left: 5%;border-radius: 15%;">
+                <span style="margin-left: 0%; margin-top: 5%;">3-Choisissez si vous voulez remplir ces champs ou
+                    extraire des instances éxistantes :</span>
+                <div class="container2">
+                    <div class="container21" style="display: flex; flex-direction: column; ">
+                        <div class="group1" id="taillePopulationContainer" style="width: 100%;">
+                            <input class="input1" type="text" id="Taille population" name="Taille population"
+                                placeholder="Taille population">
+                        </div>
+                        <div class="group1" id="nbrGenerationsContainer">
+                            <input class="input1" type="text" id="Nombres générations" name="Nombres générations"
+                                placeholder="Nombres générations">
+                        </div>
+                        <div class="group1" id="tauxMutationContainer">
+                            <input class="input1" type="text" id="Taux mutation" name="Taux mutation"
+                                placeholder="Taux mutation">
+                        </div>
+                        <div class="group1" id="nbrLoupsContainer" style="display: none;">
+                            <input class="input1" type="text" id="Nombres loups" name="Nombres loups"
+                                placeholder="Nombres loups">
+                        </div>
+                        <div class="group1" id="nbrIterationsContainer" style="display: none;">
+                            <input class="input1" type="text" id="Nombres itérations" name="Nombres itérations"
+                                placeholder="Nombres itérations">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="group" style="margin-left: 20%; margin-top: 0%; margin-bottom: 3%;">
+            <form id="myForm" method="POST" action="/enregistrer-donnees">
+                <!-- Vos champs de formulaire ici -->
+                <button class="btn" id="commencerBtn">
+                    <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1"
+                        class="sparkle">
+                        <path
+                            d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
+                        </path>
+                    </svg>
+                    <span class="text1">Commencer</span>
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+    <div class="background3"><span style="margin-left: 0%; font-size: 20px;">1-Remplissez les données suivantes ou
+            appuyez sur le boutton rond afin d'extraire des instances a partir de la base de donnée:</span>
+        <div class="group">
+
+            <input class="input" type="text" id="nbr_objets" name="nbr_objets" placeholder="Entrez le nombre d'objets">
+        </div>
+        <div class="group">
+
+            <input class="input" type="text" id="capacite-bin" name="capacite-bin"
+                placeholder="Entrez la capacité d'un bin">
+        </div>
+        <div class="group">
+            <input class="input" type="text" id="dimensions" name="dimensions"
+                placeholder="Entrez les dimensions de vos objets sous forme de liste">
+
+        </div>
+        <div class="container22" style="display: flex; flex-direction: column; margin-left: 30%;margin-top: 5%;">
+            <a href="/ouvrir-base-de-donnees" class="Btn ouvrir-db-btn">
+                <div class="sign">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" height="55" viewBox="0 0 24 24" width="55"
+                        data-name="Layer 1">
+                        <path
+                            d="m24 11.5a4.476 4.476 0 0 0 -1.706-3.5 4.481 4.481 0 0 0 -2.794-8h-15a4.481 4.481 0 0 0 -2.794 8 4.443 4.443 0 0 0 0 7 4.481 4.481 0 0 0 2.794 8h15a4.481 4.481 0 0 0 2.794-8 4.476 4.476 0 0 0 1.706-3.5zm-22-7a2.5 2.5 0 0 1 2.5-2.5h.5v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h8.5a2.5 2.5 0 0 1 0 5h-15a2.5 2.5 0 0 1 -2.5-2.5zm20 14a2.5 2.5 0 0 1 -2.5 2.5h-15a2.5 2.5 0 0 1 0-5h.5v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h8.5a2.5 2.5 0 0 1 2.5 2.5zm-17.5-4.5a2.5 2.5 0 0 1 0-5h.5v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h8.5a2.5 2.5 0 0 1 0 5z" />
+                    </svg>
+                </div>
+                <div class="text">Ouvrir la Base de donnée</div>
+            </a>
+
+        </div>
+
+
+        <div class="container22" style="display: flex; flex-direction: column; margin-left: 30%; margin-top: 5%;">
+            <a href="#" id="enregistrer-db-btn" class="Btn"> <!-- Suppression de la classe "ouvrir-db-btn" -->
+                <div class="sign">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" height="55" viewBox="0 0 24 24" width="55"
+                        data-name="Layer 1">
+                        <path
+                            d="m24 11.5a4.476 4.476 0 0 0 -1.706-3.5 4.481 4.481 0 0 0 -2.794-8h-15a4.481 4.481 0 0 0 -2.794 8 4.443 4.443 0 0 0 0 7 4.481 4.481 0 0 0 2.794 8h15a4.481 4.481 0 0 0 2.794-8 4.476 4.476 0 0 0 1.706-3.5zm-22-7a2.5 2.5 0 0 1 2.5-2.5h.5v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h8.5a2.5 2.5 0 0 1 0 5h-15a2.5 2.5 0 0 1 -2.5-2.5zm20 14a2.5 2.5 0 0 1 -2.5 2.5h-15a2.5 2.5 0 0 1 0-5h.5v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h8.5a2.5 2.5 0 0 1 2.5 2.5zm-17.5-4.5a2.5 2.5 0 0 1 0-5h.5v1a1 1 0 0 0 2 0v-1h2v1a1 1 0 0 0 2 0v-1h8.5a2.5 2.5 0 0 1 0 5z" />
+                    </svg>
+                </div>
+                <div class="text">Enregistrer dans la Base de donnée</div>
+            </a>
+        </div>
+
+
+
+
+    </div>
+    <div class="background">
+        <span style="margin-left: 2%; font-size: 25px;">Voici vos résultats obtenus a partir de l'algorithme choisi:
+        </span>
+        <div class="background4">
+            <div class="nbr-bin">
+                <div class="affichage">
+                    <div class="icon1 " style="margin-top: 5%;margin-left: 20%;">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
+                            width="50" height="50">
+                            <path fill="white"
+                                d="M23.638,6.297l-1.896-3.147L12,.066,2.257,3.149,.382,6.263c-.411,.685-.487,1.507-.21,2.256s.87,1.324,1.628,1.576l.204,.068-.008,10.451,9.997,3.332,9.995-3.332,.008-10.451,.243-.081c.748-.25,1.334-.817,1.608-1.557,.274-.74,.198-1.552-.208-2.229Zm-3.844-2.715l-7.786,2.599L4.222,3.577,12,1.115l7.794,2.467ZM1.109,8.173c-.171-.463-.124-.972,.129-1.395l1.577-2.617,8.429,2.819-1.948,3.247c-.387,.645-1.155,.929-1.868,.691l-5.313-1.771c-.468-.156-.835-.512-1.006-.975Zm1.894,2.324l4.109,1.37c1.163,.389,2.412-.076,3.042-1.125l1.344-2.241-.007,14.226-8.496-2.832,.007-9.397Zm17.984,9.397l-8.496,2.832,.007-14.228,1.346,2.244c.481,.801,1.324,1.261,2.212,1.261,.275,0,.555-.044,.829-.136l4.109-1.369-.007,9.397Zm1.92-11.714c-.168,.454-.527,.802-.986,.955l-5.352,1.784c-.712,.238-1.48-.047-1.868-.691l-1.945-3.242,8.432-2.815,1.592,2.642c.249,.415,.295,.914,.127,1.368Z" />
+                        </svg>
+                        <span style="margin-left: 0%;white-space: normal;">Nombre de bacs :</span>
+                    </div>
+                    <div class="nbr">
+                        <span>
+
+                        </span>
+                    </div>
+                </div>
+                <div class="affichage1" style="flex: 1;">
+
+                </div>
+            </div>
+            <div class="disposition">
+                <div class="affichage">
+                    <div class="icon1 " style="margin-top: 5%; margin-left: 15%;">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
+                            width="50" style="color: white;" height="50">
+                            <path fill="white"
+                                d="M15.5,15h4v1h-4v-1Zm8.5-1.5v10.5H0V13.5c0-1.379,1.121-2.5,2.5-2.5h2.5V2.5c0-1.379,1.121-2.5,2.5-2.5h9c1.379,0,2.5,1.121,2.5,2.5V11h2.5c1.379,0,2.5,1.121,2.5,2.5ZM6,11h12V2.5c0-.827-.673-1.5-1.5-1.5H7.5c-.827,0-1.5,.673-1.5,1.5V11ZM1,23H11.5V12H2.5c-.827,0-1.5,.673-1.5,1.5v9.5ZM23,13.5c0-.827-.673-1.5-1.5-1.5H12.5v11h10.5V13.5Zm-18.5,1.5v1h4v-1H4.5ZM10,5h4v-1h-4v1Z" />
+                        </svg>
+                        <span style="white-space: nowrap;">Disposition des objets </span>
+                    </div>
+                    <div class="nbr">
+                        <span>
+
+                        </span>
+                    </div>
+                </div>
+                <div class="affichage1" style="flex: 1;">
+                    <span style="text-align: center;">
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#commencerBtn").click(function (event) {
+                event.preventDefault(); // Empêcher le comportement par défaut du bouton (soumission du formulaire)
+
+                // Récupérer les valeurs des champs de formulaire
+                var nbrObjets = $("#nbr_objets").val();
+                var capaciteBin = $("#capacite-bin").val();
+                var dimensions = $("#dimensions").val();
+
+                // Créer un objet contenant les données à envoyer
+                var formData = {
+                    nbr_objets: nbrObjets,
+                    'capacite-bin': capaciteBin,
+                    dimensions: dimensions
+                };
+
+                // Envoyer les données au serveur Flask via une requête AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "/ajouter-donnees", // L'URL de la route Flask pour enregistrer les données
+                    data: formData, // Les données à envoyer au serveur
+                    success: function (response) {
+                        // Traiter la réponse du serveur si nécessaire
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Gérer les erreurs
+                        console.error("Erreur lors de l'envoi des données :", error);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+    <script>
+        // Fonction pour récupérer les valeurs des champs de formulaire depuis afficher_benchmarks
+        function recupererValeurs(champs) {
+            document.getElementById("nbr_objets").value = champs.nombre_objets;
+            document.getElementById("capacite-bin").value = champs.capacite_bin;
+            document.getElementById("dimensions").value = champs.dimensions_objets;
+        }
+
+        // Récupérer les valeurs des champs depuis l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombreObjets = urlParams.get('nombre-objets');
+        const capaciteBin = urlParams.get('capacite-bin');
+        const dimensionsObjets = urlParams.get('dimensions-objets');
+
+        // Remplir les champs avec les valeurs récupérées
+        if (nombreObjets !== null && capaciteBin !== null && dimensionsObjets !== null) {
+            recupererValeurs({ nombre_objets: nombreObjets, capacite_bin: capaciteBin, dimensions_objets: dimensionsObjets });
+        }
+    </script>
+
+
+    <script>
+        // Fonction pour soumettre le formulaire avec AJAX
+        function enregistrerDonnees() {
+            // Récupérer les valeurs des champs
+            var nombreObjets = document.getElementById("nbr_objets").value;
+            var capaciteBin = document.getElementById("capacite-bin").value;
+            var dimensions = document.getElementById("dimensions").value;
+
+            // Créer un objet FormData
+            var formData = new FormData();
+            formData.append('nbr_objets', nombreObjets);
+            formData.append('capacite-bin', capaciteBin);
+            formData.append('dimensions', dimensions);
+
+            // Envoyer les données à la route appropriée avec AJAX
+            fetch('/enregistrer-donnees', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Rediriger vers la page d'accueil ou afficher un message de succès
+                        window.location.href = '/';
+                    } else {
+                        throw new Error('Erreur lors de l\'enregistrement des données');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    // Afficher un message d'erreur à l'utilisateur
+                    alert('Une erreur s\'est produite lors de l\'enregistrement des données');
+                });
+        }
+    </script>
+
+
+
+
+</body>
+
+
+
+</html>
